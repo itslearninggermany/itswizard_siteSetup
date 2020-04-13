@@ -61,7 +61,7 @@ func (p *SiteSetup) GetUser() (user itszwizard_objects.SessionUser, err error) {
 		p.site.SessionUser = user
 	} else {
 		p.site.SessionUser, err = itswizard_jwt.GetUser(p.r, p.dbWebserver)
-		return p.site.SessionUser, err
 	}
+	return p.site.SessionUser, err
 
 }
