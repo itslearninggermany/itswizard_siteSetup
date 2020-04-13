@@ -28,7 +28,7 @@ func InitialSite(scheme, host string, username string, dbWebserver, dbClient *go
 
 	s.u.Scheme = scheme
 	s.u.Host = host
-	if username == "" {
+	if username != "" {
 		s.newAuth = true
 		s.username = username
 	} else {
