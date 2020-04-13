@@ -8,8 +8,7 @@ import (
 type Site struct {
 	Navigation  template.HTML
 	SessionUser itszwizard_objects.SessionUser
-	Sitename    string
+	SiteName    string
 	Special     interface{}
-	URLQuerys   string
+	URLQuery    string
 }
-
