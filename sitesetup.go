@@ -25,6 +25,7 @@ func InitialSite(scheme, host string, username string, dbWebserver, dbClient *go
 	s := new(SiteSetup)
 	s.u = new(url.URL)
 	s.q = new(url.Values)
+	s.r = r
 
 	s.u.Scheme = scheme
 	s.u.Host = host

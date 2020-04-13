@@ -6,28 +6,23 @@ import (
 )
 
 func (p *SiteSetup) MakeSite() (site Site, err error) {
-	if p.site.SessionUser.Username == "" {
-		if p.newAuth {
-			authToken, user, err := itswizard_jwt.CreateToken(p.r, p.username, p.dbClient, p.dbWebserver)
-			if err != nil {
-				return site, err
-			}
-			p.q.Add("key", authToken)
-			p.site.SessionUser = user
-		} else {
-			p.site.SessionUser, err = itswizard_jwt.GetUser(p.r, p.dbWebserver)
-			if err != nil {
-				return p.site, err
-			}
+	if p.newAuth {
+		authToken, user, err := itswizard_jwt.CreateToken(p.r, p.username, p.dbClient, p.dbWebserver)
+		if err != nil {
+			return site, err
 		}
-	}
-	if !p.newAuth {
+		p.q.Add("key", authToken)
+		p.site.SessionUser = user
+	} else {
+		p.site.SessionUser, err = itswizard_jwt.GetUser(p.r, p.dbWebserver)
+		if err != nil {
+			return p.site, err
+		}
 		authtoken, err := itswizard_jwt.ReAuthentificate(p.r, p.dbWebserver, p.dbClient)
 		if err != nil {
 			return site, err
 		}
 		p.q.Add("key", authtoken)
-
 	}
 
 	p.u.RawQuery = p.q.Encode()
