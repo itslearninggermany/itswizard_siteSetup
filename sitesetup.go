@@ -8,7 +8,7 @@ import (
 
 type SiteSetup struct {
 	u           *url.URL
-	q           *url.Values
+	q           url.Values
 	site        Site
 	dbWebserver *gorm.DB
 	dbClient    *gorm.DB
@@ -24,7 +24,7 @@ if username == "" ==> Dann ist es keine Erneuerung
 func InitialSite(scheme, host string, username string, dbWebserver, dbClient *gorm.DB, r *http.Request) *SiteSetup {
 	s := new(SiteSetup)
 	s.u = new(url.URL)
-	s.q = new(url.Values)
+	s.q = url.Values{}
 	s.r = r
 
 	s.u.Scheme = scheme
