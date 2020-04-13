@@ -2,10 +2,9 @@ package itswizard_siteSetup
 
 import "html/template"
 
-func createAdminNavi (query string) template.HTML {
+func createAdminNavi(query string) template.HTML {
 
-
-	erg :=  `<div class="hero-head">
+	erg := `<div class="hero-head">
     <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -16,12 +15,12 @@ func createAdminNavi (query string) template.HTML {
     <div class="navbar-menu" id="navMenu">
         <!-- Menü -->
         <div class="navbar-end">
-            <a class="navbar-item" href="/client/startpage`+ query +`">
+            <a class="navbar-item" href="/client/startpage` + query + `">
                 Start
             </a>
 
             <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link" href="/client/admin/showInstitution`+ query +`">
+                <a class="navbar-link" href="/client/admin/showInstitution` + query + `">
                     Verwaltung
                 </a>
             </div>
@@ -32,7 +31,7 @@ func createAdminNavi (query string) template.HTML {
                 </a>
 
                 <div class="navbar-dropdown">
-                    <a class="navbar-item" href="/admin/editSmtp`+ query +`">
+                    <a class="navbar-item" href="/admin/editSmtp` + query + `">
                         EmailServer
                     </a>
                 </div>
@@ -44,20 +43,20 @@ func createAdminNavi (query string) template.HTML {
                 </a>
 
                 <div class="navbar-dropdown">
-                    <a class="navbar-item" href="/client/options`+ query +`">
+                    <a class="navbar-item" href="/client/options` + query + `">
                         Persönliche Daten
                     </a>
-                    <a class="navbar-item" href="/client/changepw`+ query +`">
+                    <a class="navbar-item" href="/client/changepw` + query + `">
                         Passwort ändern
                     </a>
-					<a class="navbar-item" href="/client/log`+ query +`">
+					<a class="navbar-item" href="/client/log` + query + `">
                         Log
                     </a>
-					<a class="navbar-item" href="/admin/errorlog`+ query +`">
+					<a class="navbar-item" href="/admin/errorlog` + query + `">
                         ErrorLog
                     </a>
                     <hr class="navbar-divider">
-                    <a class="navbar-item" href="/client/logOut`+ query +`">
+                    <a class="navbar-item" href="/client/logOut` + query + `">
                         Log Out
                     </a>
                 </div>
