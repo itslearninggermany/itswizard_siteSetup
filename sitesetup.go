@@ -28,6 +28,8 @@ func InitialSite(scheme, host string, username string, dbWebserver, dbClient *go
 	if username == "" {
 		s.newAuth = true
 		s.username = username
+	} else {
+		s.newAuth = false
 	}
 	s.dbClient = dbClient
 	s.dbWebserver = dbWebserver
