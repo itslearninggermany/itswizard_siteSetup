@@ -23,6 +23,9 @@ if username == "" ==> Dann ist es keine Erneuerung
 */
 func InitialSite(scheme, host string, username string, dbWebserver, dbClient *gorm.DB, r *http.Request) *SiteSetup {
 	s := new(SiteSetup)
+	s.u = new(url.URL)
+	s.q = new(url.Values)
+
 	s.u.Scheme = scheme
 	s.u.Host = host
 	if username == "" {
