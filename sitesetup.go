@@ -23,4 +23,5 @@ func InitialSite(scheme, host string, newAuth bool, username string) *SiteSetup 
 	s.u.Scheme = scheme
 	s.u.Host = host
 	s.newAuth = newAuth
+	return s
 }
