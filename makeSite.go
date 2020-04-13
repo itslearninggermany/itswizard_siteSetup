@@ -26,7 +26,7 @@ func (p *SiteSetup) MakeSite() (site Site, err error) {
 	}
 
 	p.u.RawQuery = p.q.Encode()
-	p.site.URLQuery = p.u.RawQuery
+	p.site.URLQuery = "?" + p.u.RawQuery
 
 	if p.site.SessionUser.Admin {
 		p.site.Navigation = createAdminNavi(p.site.URLQuery)
