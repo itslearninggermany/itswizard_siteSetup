@@ -53,3 +53,11 @@ func (p *SiteSetup) GetURL() (url string, err error) {
 	}
 	return p.u.String(), nil
 }
+
+func (p *SiteSetup) GetQuery() (query string, err error) {
+	_, err = p.MakeSite()
+	if err != nil {
+		return "", err
+	}
+	return p.q.Encode(), nil
+}
