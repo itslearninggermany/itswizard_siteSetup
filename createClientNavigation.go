@@ -1,9 +1,18 @@
 package itswizard_siteSetup
 
-import "html/template"
+import (
+	"github.com/itslearninggermany/itszwizard_objects"
+	"html/template"
+)
 
-func createClientNavi (query string) template.HTML {
-	erg  := `<div class="hero-head">
+func createClientNavi(query string, user itszwizard_objects.SessionUser) template.HTML {
+
+	//CSV
+	//Schild
+	//Excel
+	//Hierarchien
+
+	erg := `<div class="hero-head">
     <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -13,7 +22,7 @@ func createClientNavi (query string) template.HTML {
     <div class="navbar-menu" id="navMenu">
         <!-- Menü -->
         <div class="navbar-end">
-            <a class="navbar-item" href="/client/startpage`+ query +`">
+            <a class="navbar-item" href="/client/startpage` + query + `">
                 Start
             </a>
 
@@ -23,29 +32,29 @@ func createClientNavi (query string) template.HTML {
                 </a>
 
                 <div class="navbar-dropdown">
-                    <a class="navbar-item" href="/client/usersync/csvchoice`+ query +`">
+                    <a class="navbar-item" href="/client/usersync/csvchoice` + query + `">
                         CSV-Datei hochladen
                     </a>
-					<a class="navbar-item" href="/client/usersync/azureactivedirectory`+ query +`">
+					<a class="navbar-item" href="/client/usersync/azureactivedirectory` + query + `">
                         Mit einem Azure Active Directory verbinden
 					</a>
-                    <a class="navbar-item" href="/client/usersync/schildnrw`+ query +`">
+                    <a class="navbar-item" href="/client/usersync/schildnrw` + query + `">
                         Datei aus Schild-NRW hochladen
                     </a>
 					<!--
-                    <a class="navbar-item" href="/client/usersync/excelchoice`+ query +`">
+                    <a class="navbar-item" href="/client/usersync/excelchoice` + query + `">
                         Excel-Datei hochladen
-                    </a> -->
-                    <a class="navbar-item" href="/client/showUsers`+ query +`">
-                        Aktuelle Nutzerdaten
                     </a>
-                    <a class="navbar-item" href="/client/showGroups`+ query +`">
+                    <a class="navbar-item" href="/client/showUsers` + query + `">
+                        Aktuelle Nutzerdaten
+					</a>
+                    <a class="navbar-item" href="/client/showGroups` + query + `">
                         Aktuelle Hierarchien bearbeiten
                     </a>
                     <hr class="navbar-divider">
-                    <a class="navbar-item" href="/client/usersync/start`+ query +`">
+                    <a class="navbar-item" href="/client/usersync/start` + query + `">
                         Synchronisieren
-                    </a>
+                    </a>  -->
                 </div>
 
             </div>
@@ -56,7 +65,7 @@ func createClientNavi (query string) template.HTML {
                 </a>
 
                 <div class="navbar-dropdown">
-                    <a class="navbar-item" href="/client/download/excel`+ query +`">
+                    <a class="navbar-item" href="/client/download/excel` + query + `">
                         Als Exceldatei
                     </a>
                 </div>
@@ -68,17 +77,17 @@ func createClientNavi (query string) template.HTML {
                 </a>
 
                 <div class="navbar-dropdown">
-                    <a class="navbar-item" href="/client/options`+ query +`">
+                    <a class="navbar-item" href="/client/options` + query + `">
                         Persönliche Daten
                     </a>
-                    <a class="navbar-item" href="/client/changepw`+ query +`">
+                    <a class="navbar-item" href="/client/changepw` + query + `">
                         Passwort ändern
                     </a>
-					<a class="navbar-item" href="/client/log`+ query +`">
+					<a class="navbar-item" href="/client/log` + query + `">
                         Log
                     </a>
                     <hr class="navbar-divider">
-                    <a class="navbar-item" href="/client/logOut`+ query +`">
+                    <a class="navbar-item" href="/client/logOut` + query + `">
                         Log Out
                     </a>
                 </div>

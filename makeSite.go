@@ -31,7 +31,7 @@ func (p *SiteSetup) MakeSite() (site Site, err error) {
 	if p.site.SessionUser.Admin {
 		p.site.Navigation = createAdminNavi(p.site.URLQuery)
 	} else {
-		p.site.Navigation = createClientNavi(p.site.URLQuery)
+		p.site.Navigation = createClientNavi(p.site.URLQuery, p.site.SessionUser)
 	}
 	return p.site, err
 }
