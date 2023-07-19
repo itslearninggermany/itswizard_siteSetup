@@ -35,11 +35,17 @@ func createClientNavi(query string, user itszwizard_objects.SessionUser) templat
                     <a class="navbar-item" href="/client/usersync/csvchoice` + query + `">
                         CSV-Datei hochladen
                     </a>
-					<a class="navbar-item" href="/client/usersync/azureactivedirectory` + query + `">
+					<a class="navbar-item" href="/client/usersync/azureactivedirectory/main` + query + `">
                         Mit einem Azure Active Directory verbinden
 					</a>
                     <a class="navbar-item" href="/client/usersync/schildnrw` + query + `">
                         Datei aus Schild-NRW hochladen
+                    </a>
+					<a class="navbar-item" href="/client/usersync/univention` + query + `">
+                        Univention Resync und Debugging
+                    </a>
+					<a class="navbar-item" href="/client/usersync/bw` + query + `">
+                        Baden Württemberg - User hochladen
                     </a>
 					<!--
                     <a class="navbar-item" href="/client/usersync/excelchoice` + query + `">
@@ -55,10 +61,35 @@ func createClientNavi(query string, user itszwizard_objects.SessionUser) templat
                     <a class="navbar-item" href="/client/usersync/start` + query + `">
                         Synchronisieren
                     </a>  -->
+                    <a class="navbar-item" href="/client/usersync/iserv` + query + `">
+                        IServ einrichten
+                    </a>
                 </div>
 
             </div>
 
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                    Länderadministration
+                </a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="/client/usersync/lusd` + query + `">
+                        Berlin
+                    </a>
+                    <a class="navbar-item" href="/client/usersync/adminsh` + query + `">
+                        Schleswig-Holstein
+                    </a>
+                    <a class="navbar-item" href="/client/usersync/adminmv` + query + `">
+                        Mecklenburg Vorpommern
+                    </a>
+                    <a class="navbar-item" href="/client/admin/bw` + query + `">
+                        Baden Württemberg
+                    </a>
+                </div>
+            </div>
+
+<!--
             <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
                     Nutzerdaten herunterladen
@@ -70,22 +101,26 @@ func createClientNavi(query string, user itszwizard_objects.SessionUser) templat
                     </a>
                 </div>
             </div>
-
+-->
             <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
                     Nutzereinstellungen und Logs
                 </a>
 
                 <div class="navbar-dropdown">
+<!--
                     <a class="navbar-item" href="/client/options` + query + `">
                         Persönliche Daten
                     </a>
+-->
                     <a class="navbar-item" href="/client/changepw` + query + `">
                         Passwort ändern
                     </a>
+<!--
 					<a class="navbar-item" href="/client/log` + query + `">
                         Log
                     </a>
+-->
                     <hr class="navbar-divider">
                     <a class="navbar-item" href="/client/logOut` + query + `">
                         Log Out

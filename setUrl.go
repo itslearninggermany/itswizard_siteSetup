@@ -1,6 +1,9 @@
 package itswizard_siteSetup
 
-import "net/url"
+import (
+	"github.com/itslearninggermany/itswizard_jwt"
+	"net/url"
+)
 
 func (p *SiteSetup) SetTargetPath(target string) *SiteSetup {
 	p.u.Path = target
@@ -52,6 +55,10 @@ func (p *SiteSetup) GetURL() (url string, err error) {
 		return "", err
 	}
 	return p.u.String(), nil
+}
+
+func (p *SiteSetup) GetJWTToken() (string, error) {
+	return itswizard_jwt.ReAuthentificate(p.r, p.dbWebserver, p.dbClient)
 }
 
 func (p *SiteSetup) GetQuery() (query string, err error) {

@@ -19,41 +19,66 @@ func createAdminNavi(query string) template.HTML {
                 Start
             </a>
 
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link" href="/client/admin/showInstitution` + query + `">
-                    Verwaltung
+			<div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                    Manage Clients
                 </a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="/client/admin/newcustomer` + query + `">
+                        New Customer
+                    </a>
+                    <a class="navbar-item" href="/client/admin/myCustomer` + query + `">
+                        My Customer
+                    </a>
+                    <a class="navbar-item" href="/client/admin/MatchCustomer` + query + `">
+                        Match Customer
+                    </a>
+ 					<a class="navbar-item" href="/client/admin/integrationSupporter` + query + `">
+                        New Integration Supporter
+                    </a>
+                    <hr class="navbar-divider">
+                     <a class="navbar-item" href="https://bw.itswizard.de/client/admin/showInstitution` + query + `">
+                        Client-Administration (Superadmin)
+                    </a>
+                     <a class="navbar-item" href="/client/admin/newitswizardadmin` + query + `">
+                        New Itswizard Administrator (Superadmin)
+                     </a>
+                     <a class="navbar-item" href="/client/admin/itswizardusers` + query + `">
+                        Show all Itswizard Users (Superadmin)
+                     </a>
+                </div>
             </div>
 
 			 <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
-            		Servereinstellungen
+            		ServerSetup (Superadmin)
                 </a>
 
                 <div class="navbar-dropdown">
                     <a class="navbar-item" href="/admin/editSmtp` + query + `">
-                        EmailServer
+                        EmailServer Setup (Superadmin)
+                    </a>
+					<a class="navbar-item" href="/admin/testemail` + query + `">
+                        Send TestMail (Superadmin) 
+                    </a>
+					<a class="navbar-item" href="/admin/errorlog` + query + `">
+                        System Error Log (Superamdin)
                     </a>
                 </div>
 			</div>
 
             <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
-                    Nutzereinstellungen
+                    Setup 
                 </a>
 
                 <div class="navbar-dropdown">
                     <a class="navbar-item" href="/client/options` + query + `">
-                        Persönliche Daten
+                        Personal Data
                     </a>
                     <a class="navbar-item" href="/client/changepw` + query + `">
-                        Passwort ändern
-                    </a>
-					<a class="navbar-item" href="/client/log` + query + `">
-                        Log
-                    </a>
-					<a class="navbar-item" href="/admin/errorlog` + query + `">
-                        ErrorLog
+                        Change Password
                     </a>
                     <hr class="navbar-divider">
                     <a class="navbar-item" href="/client/logOut` + query + `">
@@ -63,7 +88,6 @@ func createAdminNavi(query string) template.HTML {
             </div>
         </div>
     </div>
-</div>
 
 
 
