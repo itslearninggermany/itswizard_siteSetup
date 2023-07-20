@@ -32,37 +32,14 @@ func createClientNavi(query string, user itszwizard_objects.SessionUser) templat
                 </a>
 
                 <div class="navbar-dropdown">
-                    <a class="navbar-item" href="/client/usersync/csvchoice` + query + `">
-                        CSV-Datei hochladen
-                    </a>
 					<a class="navbar-item" href="/client/usersync/azureactivedirectory/main` + query + `">
                         Mit einem Azure Active Directory verbinden
 					</a>
-                    <a class="navbar-item" href="/client/usersync/schildnrw` + query + `">
-                        Datei aus Schild-NRW hochladen
-                    </a>
 					<a class="navbar-item" href="/client/usersync/univention` + query + `">
                         Univention Resync und Debugging
                     </a>
 					<a class="navbar-item" href="/client/usersync/bw` + query + `">
                         Baden Württemberg - User hochladen
-                    </a>
-					<!--
-                    <a class="navbar-item" href="/client/usersync/excelchoice` + query + `">
-                        Excel-Datei hochladen
-                    </a>
-                    <a class="navbar-item" href="/client/showUsers` + query + `">
-                        Aktuelle Nutzerdaten
-					</a>
-                    <a class="navbar-item" href="/client/showGroups` + query + `">
-                        Aktuelle Hierarchien bearbeiten
-                    </a>
-                    <hr class="navbar-divider">
-                    <a class="navbar-item" href="/client/usersync/start` + query + `">
-                        Synchronisieren
-                    </a>  -->
-                    <a class="navbar-item" href="/client/usersync/iserv` + query + `">
-                        IServ einrichten
                     </a>
                 </div>
 
@@ -77,31 +54,13 @@ func createClientNavi(query string, user itszwizard_objects.SessionUser) templat
                     <a class="navbar-item" href="/client/usersync/lusd` + query + `">
                         Berlin
                     </a>
-                    <a class="navbar-item" href="/client/usersync/adminsh` + query + `">
-                        Schleswig-Holstein
-                    </a>
-                    <a class="navbar-item" href="/client/usersync/adminmv` + query + `">
-                        Mecklenburg Vorpommern
-                    </a>
                     <a class="navbar-item" href="/client/admin/bw` + query + `">
                         Baden Württemberg
                     </a>
                 </div>
             </div>
 
-<!--
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">
-                    Nutzerdaten herunterladen
-                </a>
 
-                <div class="navbar-dropdown">
-                    <a class="navbar-item" href="/client/download/excel` + query + `">
-                        Als Exceldatei
-                    </a>
-                </div>
-            </div>
--->
             <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
                     Nutzereinstellungen und Logs
